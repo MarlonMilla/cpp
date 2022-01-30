@@ -19,10 +19,10 @@ int main(int argc, char** argv) {
 	cout<<endl;
 	
 	// Proceso
-	Suma = a+b;
-	Resta = a-b;
-	Multiplicacion = a*b;
-	Division = a/b;
+	Suma = a + b;
+	Resta = a - b;
+	Multiplicacion = a * b;
+	Division = a / b;
 	
 	// Salida
 	cout<<"La suma de a+b es: "<<Suma<<endl;
