@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
 	
 	// Salida
 	cout<<"La suma de a+b es: "<<Suma<<endl;
-	cout<<"La Resta de a-b es: "<<Resta<<endl;
+	cout<<"La Resta de a - b es: "<<Resta<<endl;
 	cout<<"La Multiplicacion de a*b es: "<<Multiplicacion<<endl;
 	cout<<"La division de a/b es: "<<Division<<endl;
 	return 0;
