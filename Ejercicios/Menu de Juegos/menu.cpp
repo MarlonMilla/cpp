@@ -29,13 +29,13 @@ int main(int argc, char** argv) {
     cin >> opcion;
 	
 	if(opcion==1){
-		TresEnRaya();
+		void tresEnRaya();
 	}
 	if(opcion==2){
-		Ahorcado();
+		void ahorcado();
 	}
 	if(opcion==3){
-		PingPong();
+		void pong();
 	}
 	
 	return 0;
