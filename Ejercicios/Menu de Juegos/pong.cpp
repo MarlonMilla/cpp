@@ -2,15 +2,14 @@
 #include<cstdlib> 
 #include<ctime>  
 #include<conio.h>
-#include "pong.h"
+#include "PingPong.h"
+
 
 using namespace std;
 
-void pong();
+void PingPong();
 
-	using namespace std; // for cout
 
-// global variable for specifying direction of the ball
 enum Ball_Direction{STOP, LEFT, UPLEFT, DOWNLEFT, RIGHT, UPRIGHT, DOWNRIGHT};
 
 
