@@ -1,67 +1,54 @@
 #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
 #include <string.h>
 #include <time.h>
 #include <conio.h>
-#include "ahorcado.h"
+#include "Ahorcado.h"
+
+using namespace std;
 
 
 
-
-void ahorcado();
-
-	int main(){
-	system("mode con cols=80 lines=25");
-	categorias();
-	system("pause");
-	return 0;
-}
-
-void categorias(){
-	int op;
-	do{
-		system("cls");
-		printf("\n\t\t\t\tJUEGO EL AHORCADO\n\n");
-		printf(" CATEGORIAS\n\n");
-		printf(" 1. Frutas\n");
-		printf(" 2. Animales\n");
-		printf(" 3. Paises\n");
-		printf(" 4. Objetos\n\n");
-		printf(" Ingresa una opcion: ");
-		scanf("%i",&op);		
-	}while(op<1 || op>4);
-
-	if (op==1) ingresoCategoria(op);
-	if (op==2) ingresoCategoria(op);
-	if (op==3) ingresoCategoria(op);
-	if (op==4) ingresoCategoria(op);
-}
-
-
-void ingresoCategoria (int op){
-	char nombrecat[4][15] = {"Frutas","Animales","Paises","Objetos"};
-	char frutas [10][15] = {"MELON","PAPAYA","SANDIA","MANZANA","PERA","NARANJA","UVA","CEREZA","CIRUELA","KIWI"};
-	char animales [10][15] = {"PERRO","GATO","CABALLO","GALLINA","JIRAFA","MONO","VACA","CONEJO","TORTUGA","LOBO"};
-	char paises [10][15] = {"PERU","COLOMBIA","ARGENTINA","NICARAGUA","ITALIA","MEXICO","CANADA","VENEZUELA","ECUADOR","BRASIL"};
-	char objetos [10][15] = {"MOCHILA","RELOJ","ZAPATILLA","MUEBLE","CUADERNO","SILLA","MESA","CELULAR","PUERTA","AURICULARES"};
-	
-	switch(op){
+void dibujo (int intentos){
+	switch(intentos){
+		case 0:
+			printf("\n     _______\n    |       |\n    |\n    |\n    |\n    |\n    |\n ----------");
+			break;
 		case 1:
-			empezarJuego(frutas,nombrecat[op-1]);
+			printf("\n     _______\n    |       |\n    |       0\n    |\n    |\n    |\n    |\n ----------");
 			break;
 		case 2:
-			empezarJuego(animales,nombrecat[op-1]);
+			printf("\n     _______\n    |       |\n    |       0\n    |       |\n    |\n    |\n    |\n ----------");
 			break;
 		case 3:
-			empezarJuego(paises,nombrecat[op-1]);
+			printf("\n     _______\n    |       |\n    |       0\n    |      /|\n    |\n    |\n    |\n ----------");
 			break;
 		case 4:
-			empezarJuego(objetos,nombrecat[op-1]);
-			break;	
-	}	
+			printf("\n     _______\n    |       |\n    |       0\n    |      /|");
+			printf("\\");
+			printf("\n");
+			printf("    |\n    |\n    |\n ----------");
+			break;
+		case 5:
+			printf("\n     _______\n    |       |\n    |       0\n    |      /|");
+			printf("\\");
+			printf("\n");
+			printf("    |      /\n    |\n    |\n ----------");
+			break;
+		case 6:
+			printf("\n     _______\n    |       |\n    |       0\n    |      /|");
+			printf("\\");
+			printf("\n");
+			printf("    |      / ");
+			printf("\\");
+			printf("\n");
+			printf("    |\n    |\n ----------");
+			break;
+	}
+	
 }
-
 
 void empezarJuego (char palabras[][15], char nombre[]){
 	int opcion,i,j,k,longitud,espacios,puntos=1200;
@@ -101,7 +88,7 @@ void empezarJuego (char palabras[][15], char nombre[]){
 			printf(" LA SOLUCION ERA: %s\n\n",palabras[opcion]);
 			printf(" Presiona una tecla para volver a jugar..");
 			getch();
-			categorias();	
+			
 		}
 		
 		
@@ -118,7 +105,7 @@ void empezarJuego (char palabras[][15], char nombre[]){
 			printf("\n\n FELICIDADES.. GANASTE!!\n\n");
 			printf(" Presiona una tecla para volver a jugar..");
 			getch();
-			categorias();		
+				
 		}
 		
 		
@@ -146,42 +133,54 @@ void empezarJuego (char palabras[][15], char nombre[]){
 	printf("\n\n");		
 }
 
-void dibujo (int intentos){
-	switch(intentos){
-		case 0:
-			printf("\n     _______\n    |       |\n    |\n    |\n    |\n    |\n    |\n ----------");
-			break;
+
+void ingresoCategoria (int op){
+	char nombrecat[4][15] = {"Frutas","Animales","Paises","Objetos"};
+	char frutas [10][15] = {"MELON","PAPAYA","SANDIA","MANZANA","PERA","NARANJA","UVA","CEREZA","CIRUELA","KIWI"};
+	char animales [10][15] = {"PERRO","GATO","CABALLO","GALLINA","JIRAFA","MONO","VACA","CONEJO","TORTUGA","LOBO"};
+	char paises [10][15] = {"PERU","COLOMBIA","ARGENTINA","NICARAGUA","ITALIA","MEXICO","CANADA","VENEZUELA","ECUADOR","BRASIL"};
+	char objetos [10][15] = {"MOCHILA","RELOJ","ZAPATILLA","MUEBLE","CUADERNO","SILLA","MESA","CELULAR","PUERTA","AURICULARES"};
+	
+	switch(op){
 		case 1:
-			printf("\n     _______\n    |       |\n    |       0\n    |\n    |\n    |\n    |\n ----------");
+			empezarJuego(frutas,nombrecat[op-1]);
 			break;
 		case 2:
-			printf("\n     _______\n    |       |\n    |       0\n    |       |\n    |\n    |\n    |\n ----------");
+			empezarJuego(animales,nombrecat[op-1]);
 			break;
 		case 3:
-			printf("\n     _______\n    |       |\n    |       0\n    |      /|\n    |\n    |\n    |\n ----------");
+			empezarJuego(paises,nombrecat[op-1]);
 			break;
 		case 4:
-			printf("\n     _______\n    |       |\n    |       0\n    |      /|");
-			printf("\\");
-			printf("\n");
-			printf("    |\n    |\n    |\n ----------");
-			break;
-		case 5:
-			printf("\n     _______\n    |       |\n    |       0\n    |      /|");
-			printf("\\");
-			printf("\n");
-			printf("    |      /\n    |\n    |\n ----------");
-			break;
-		case 6:
-			printf("\n     _______\n    |       |\n    |       0\n    |      /|");
-			printf("\\");
-			printf("\n");
-			printf("    |      / ");
-			printf("\\");
-			printf("\n");
-			printf("    |\n    |\n ----------");
-			break;
-	}
-	
+			empezarJuego(objetos,nombrecat[op-1]);
+			break;	
+	}	
+}
+
+
+void categorias(){
+	int op;
+	do{
+		system("cls");
+		printf("\n\t\t\t\tJUEGO EL AHORCADO\n\n");
+		printf(" CATEGORIAS\n\n");
+		printf(" 1. Frutas\n");
+		printf(" 2. Animales\n");
+		printf(" 3. Paises\n");
+		printf(" 4. Objetos\n\n");
+		printf(" Ingresa una opcion: ");
+		scanf("%i",&op);		
+	}while(op<1 || op>4);
+
+	if (op==1) ingresoCategoria(op);
+	if (op==2) ingresoCategoria(op);
+	if (op==3) ingresoCategoria(op);
+	if (op==4) ingresoCategoria(op);
+}
+	int main(){
+	system("mode con cols=80 lines=25");
+	categorias();
+	system("pause");
+	return 0;
 }
 
