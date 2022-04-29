@@ -29,15 +29,12 @@ int main(int argc, char** argv) {
     cin >> opcion;
 	
 	if(opcion==1){
-		cout<<"hola bienvenido";
 		TresEnRaya();
 	}
 	if(opcion==2){
-		cout<<"sigues aqui?";
 		Ahorcado();
 	}
 	if(opcion==3){
-		cout<<"pense que ya te habias idos";
 		PingPong();
 	}
 	
