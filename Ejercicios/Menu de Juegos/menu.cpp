@@ -1,39 +1,45 @@
 #include <iostream>
-#include "tresEnRaya.h"
-#include "pong.h"
-#include "menu.h"
-#include "ahorcado.h"
+#include <windows.h>
+#include <conio.h>
+#include <stdlib.h>
+#include "Ahorcado.h"
+#include "TresEnRaya.h"
+#include "PingPong.h"
 
 using namespace std;
 
-void menu()
-{
-    int opcion = 0;
 
-    while(true)
-    {
-        system("cls");
-
-        cout << "****";
-        cout << "MENU";
-        cout << "****";
-        cout << endl;
-        cout << endl;
-        cout << endl;
-
-        cout << "1 - Tres En Raya" << endl;
-        cout << "2 - Ahorcado" << endl;
-        cout << "3 - Ping Pong" << endl;
-        cout << "0 - Salir" << endl;
-
-        cout << endl;
-        cout << "Ingrese una opcion: ";
-        cin >> opcion;
-
-        if (opcion == 0)
-        {
-            break;
-        }
-    }
+int main(int argc, char** argv) {
+	int a=0, opcion=0;
+	system("color 02");
+	cout <<"-------------------------------------------"<<endl;
+	cout <<"| ***** ***** ******** *****  ** **    ** |"<<endl;
+	cout <<"| ** ** ** ** **       ** **  ** **    ** |"<<endl;
+	cout <<"| **  ***  ** ******** **  ** ** **    ** |"<<endl;
+	cout <<"| **  ***  ** **       **   * ** **    ** |"<<endl;
+	cout <<"| **   *   ** ******** **    *** ******** |"<<endl;
+	cout <<"-------------------------------------------"<<endl;
+	cout <<"-----JUEGOS------"<<endl;
+	cout <<"1_ Tres en Raya"<<endl;
+	cout <<"2_ Ahorcado"<<endl;
+	cout <<"3_ Ping Pong"<<endl;
+	cout << endl;
     
+	cout << "Ingrese una opcion: ";
+    cin >> opcion;
+	
+	if(opcion==1){
+		cout<<"hola bienvenido";
+		TresEnRaya();
+	}
+	if(opcion==2){
+		cout<<"sigues aqui?";
+		Ahorcado();
+	}
+	if(opcion==3){
+		cout<<"pense que ya te habias idos";
+		PingPong();
+	}
+	
+	return 0;
 }
